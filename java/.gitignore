@@ -1,0 +1,9 @@
+libs
+*~
+QA
+bin
+gen
+deploy
+*.jar
+*.class
+local.properties
