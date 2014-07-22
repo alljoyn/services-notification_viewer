@@ -16,20 +16,22 @@
 
 package org.alljoyn.ioe.notificationviewer;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
+public class Constants {
 
-/**
- * This activity shows no UI. It serves the purpose of starting the NotificationService by the user. As of Android 3.0, Services cannot be started from BOOT_COMPLETE Intent unless
- * app had previously been explicitly started by the user.
- */
-public class DummyActivity extends Activity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Intent serviceIntent = new Intent(getApplicationContext(), NotificationViewer.class);
-        getApplicationContext().startService(serviceIntent);
-        finish();
-    }
+    public static String TAG = NotificationViewer.TAG;
+
+    public static final int SHOW_LOG_MESSAGE = 1;
+
+    public static final int SETTIME_SERVER_FOUND = 20;
+    public static final int SET_THE_TIME = 21;
+
+    public static final String UNIQUENAME = "uniqueName";
+    public static final String DISPLAYNAME = "displayname";
+    public static final String SESSIONID = "sessionId";
+
+    public static final String SHARED_PREFS_FILENAME = "shared_prefs";
+    public static final String SHARED_PREFS_KEY_DEVICE_NAME = "deviceName";
+
+    public static final String ALLJOYN_DIR = "/AllJoyn/";
+    public static final String PROPERTIES_FILENAME = "TVNotificationViewer.properties";
 }

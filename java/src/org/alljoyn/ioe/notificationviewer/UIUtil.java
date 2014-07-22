@@ -16,20 +16,32 @@
 
 package org.alljoyn.ioe.notificationviewer;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
+import java.util.UUID;
 
-/**
- * This activity shows no UI. It serves the purpose of starting the NotificationService by the user. As of Android 3.0, Services cannot be started from BOOT_COMPLETE Intent unless
- * app had previously been explicitly started by the user.
- */
-public class DummyActivity extends Activity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Intent serviceIntent = new Intent(getApplicationContext(), NotificationViewer.class);
-        getApplicationContext().startService(serviceIntent);
-        finish();
+import org.alljoyn.ioe.notificationviewer.logic.DeviceManagerImpl;
+import org.alljoyn.ioe.notificationviewer.logic.Interface.Device;
+
+import android.graphics.Bitmap;
+import android.widget.ImageView;
+
+public class UIUtil {
+
+    public static void setDeviceIcon(ImageView view, UUID deviceId, boolean isNotificationWithImage, int idOfLayoutContainingIconView) {
+        Device device = getDevice(deviceId);
+        if (device != null) {
+            Bitmap b = DeviceManagerImpl.getInstance().getDeviceImage(deviceId, isNotificationWithImage, idOfLayoutContainingIconView);
+            if (b != null) {
+                view.setImageBitmap(b);
+            } else {
+                view.setImageResource(R.drawable.my_devices_icon_reg);
+            }
+        } else {
+            view.setImageResource(R.drawable.my_devices_icon_reg);
+        }
     }
+
+    public static Device getDevice(UUID uuid) {
+        return DeviceManagerImpl.getInstance().getDevice(uuid);
+    }
+
 }

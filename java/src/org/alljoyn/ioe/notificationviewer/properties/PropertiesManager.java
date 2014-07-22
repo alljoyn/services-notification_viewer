@@ -14,22 +14,10 @@
  *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  ******************************************************************************/
 
-package org.alljoyn.ioe.notificationviewer;
+package org.alljoyn.ioe.notificationviewer.properties;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-
-/**
- * This activity shows no UI. It serves the purpose of starting the NotificationService by the user. As of Android 3.0, Services cannot be started from BOOT_COMPLETE Intent unless
- * app had previously been explicitly started by the user.
- */
-public class DummyActivity extends Activity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Intent serviceIntent = new Intent(getApplicationContext(), NotificationViewer.class);
-        getApplicationContext().startService(serviceIntent);
-        finish();
-    }
+public interface PropertiesManager {
+    void init();
+    int getNotificationPopupTimeoutInMs();
+    int getNotificationFullscreenAlertTimeoutInMs();
 }

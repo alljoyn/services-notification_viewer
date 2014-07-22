@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
    <!--
 
         Copyright (c) 2013-2014, AllSeen Alliance. All rights reserved.
@@ -16,6 +15,10 @@
         OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
   -->
-<resources>
-    <integer name="minimum_lines">10</integer>
-</resources>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+     <item android:state_pressed="true" android:color="#ffffff" /> <!-- pressed -->
+     <item android:state_focused="true" android:color="#ec068d" /> <!-- focused -->          
+     <item android:state_enabled="false" android:color="#404040" /> <!-- disable -->     
+     <item android:color="#a3a3a3" /> <!-- default -->
+ </selector>

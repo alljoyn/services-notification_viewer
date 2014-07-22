@@ -14,22 +14,49 @@
  *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  ******************************************************************************/
 
-package org.alljoyn.ioe.notificationviewer;
+package org.alljoyn.ioe.notificationviewer.logic.Interface;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
+public class DeviceResponse 
+{
+	public enum ResponseCode
+	{
+		Status_OK,
+		Status_ERROR,
+		Status_ERROR_NO_PEER_NAME,
+		Status_ERROR_CANT_ESTABLISH_SESSION
+		
+	}//enum
+	
+	private ResponseCode m_status;
+	private String m_msg;
+	private Throwable m_throwable;
+	
+	public DeviceResponse(ResponseCode status)
+	{
+		m_status = status;
 
-/**
- * This activity shows no UI. It serves the purpose of starting the NotificationService by the user. As of Android 3.0, Services cannot be started from BOOT_COMPLETE Intent unless
- * app had previously been explicitly started by the user.
- */
-public class DummyActivity extends Activity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Intent serviceIntent = new Intent(getApplicationContext(), NotificationViewer.class);
-        getApplicationContext().startService(serviceIntent);
-        finish();
-    }
+	}
+	
+	public DeviceResponse(ResponseCode status, String msg)
+	{
+		m_status = status;
+		m_msg = msg;
+	}
+	
+	public DeviceResponse(ResponseCode status, String msg, Throwable t)
+	{
+		m_status = status;
+		m_msg = msg;
+		m_throwable = t;
+	}
+
+	public ResponseCode getStatus()
+	{
+		return m_status;
+	}
+	
+	public String getMsg() 
+	{
+		return m_msg;
+	}
 }

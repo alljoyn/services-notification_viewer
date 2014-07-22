@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-   <!--
+<!--
 
-        Copyright (c) 2013, AllSeen Alliance. All rights reserved.
-
-           Permission to use, copy, modify, and/or distribute this software for any
-           purpose with or without fee is hereby granted, provided that the above
-           copyright notice and this permission notice appear in all copies.
-
-           THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-           WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-           MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-           ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-           WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
-  -->
+        Copyright (c) 2013-2014, AllSeen Alliance. All rights reserved.
+ 
+        Permission to use, copy, modify, and/or distribute this software for any
+        purpose with or without fee is hereby granted, provided that the above
+        copyright notice and this permission notice appear in all copies.
+ 
+        THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+        WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+        MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+        ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+        WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+        ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+        OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+        
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:android1="http://schemas.android.com/apk/res/android"
     android:id="@+id/toast_layout_root"
-    android:layout_width="360dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/mpq_tv_notify_base"
+    android:background="@drawable/tv_notify_base"
     android:orientation="horizontal"
     android:padding="@dimen/toast_margins" >
- 
+
     <ImageView
         android1:id="@+id/notification_toast_image"
         android1:layout_width="60dp"
         android1:layout_height="52dp"
         android1:layout_gravity="top|left"
         android1:gravity="center"
-        android1:src="@drawable/ajnv_launcher" />
+        android1:src="@drawable/my_devices_icon_reg" />
 
     <LinearLayout
         android1:id="@+id/notification_toast_text_zone"
-        android1:layout_width="fill_parent"
+        android1:layout_width="match_parent"
         android1:layout_height="wrap_content"
         android1:orientation="vertical"
         android1:paddingLeft="@dimen/toast_margins" >
 
         <TextView
             android1:id="@+id/notification_toast_device_name"
-            android1:layout_width="fill_parent"
+            android1:layout_width="match_parent"
             android1:layout_height="wrap_content"
             android1:maxLines="1"
             android1:paddingBottom="@dimen/toast_padding_vertical_text"
@@ -54,15 +54,15 @@
             android1:textSize="@dimen/toast_device_name_font_size"
             android1:textStyle="bold" />
 
-		<View
+        <View
             android1:id="@+id/notification_toast_divider"
-		    android:layout_width="280dp"
-		    android:layout_height="2dp"
-		    android:background="@color/toast_text_color" />
+            android:layout_width="280dp"
+            android:layout_height="2dp"
+            android:background="@color/toast_text_color" />
 
         <TextView
             android1:id="@+id/notification_toast_message"
-            android1:layout_width="fill_parent"
+            android1:layout_width="match_parent"
             android1:layout_height="wrap_content"
             android:ellipsize="end"
             android1:paddingTop="@dimen/toast_padding_vertical_text"
@@ -73,7 +73,6 @@
             android1:textColor="@color/toast_text_color"
             android1:textSize="@dimen/toast_device_name_font_size"
             android1:textStyle="normal" />
-
     </LinearLayout>
- 
+
 </LinearLayout>

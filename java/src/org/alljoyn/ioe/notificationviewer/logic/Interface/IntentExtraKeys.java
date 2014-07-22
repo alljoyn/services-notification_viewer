@@ -14,22 +14,13 @@
  *    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  ******************************************************************************/
 
-package org.alljoyn.ioe.notificationviewer;
+package org.alljoyn.ioe.notificationviewer.logic.Interface;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
+public class IntentExtraKeys {
+    int i = 1;
 
-/**
- * This activity shows no UI. It serves the purpose of starting the NotificationService by the user. As of Android 3.0, Services cannot be started from BOOT_COMPLETE Intent unless
- * app had previously been explicitly started by the user.
- */
-public class DummyActivity extends Activity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Intent serviceIntent = new Intent(getApplicationContext(), NotificationViewer.class);
-        getApplicationContext().startService(serviceIntent);
-        finish();
-    }
+    public static final String MSG = "org.alljoyn.intent_keys.device_msg";
+    public static final String DEVICE_ID = "org.alljoyn.intent_keys.device_id";
+    public static final String NOTIFICATION_ID = "org.alljoyn.intent_keys.notification_id";
+
 }
